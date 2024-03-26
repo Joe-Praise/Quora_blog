@@ -16,7 +16,9 @@ const followingRoutes = require('./routes/followingRoutes');
 const app_route = require('./routes/app-routes');
 const admin_route = require('./routes/admin-routes');
 
-app.use(cors({ origin: ' http://localhost:3000', credentials: true }));
+app.use(
+  cors({ origin: 'https://my-quora-remake.onrender.com', credentials: true }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
