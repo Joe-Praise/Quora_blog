@@ -39,7 +39,7 @@ export function followHandler(
 const PostCard = (props) => {
 	const data = useRouteLoaderData('userProfile');
 	const initialRef = useRef(true);
-	const userInfo = data;
+	const userInfo = data.data;
 	const { setGetLogin, setReloadFollowing, setReload } = useContext(AppContext);
 	const [filteredComments, setFilteredComments] = useState([]);
 	const [commentValue, setCommentValue] = useState('');
@@ -161,7 +161,7 @@ const PostCard = (props) => {
 			setGetLogin((prevState) => !prevState);
 			const tweakedData = {
 				...data.data,
-				authorId: userInfo.data,
+				authorId: userInfo,
 			};
 			setFilteredComments((prevState) => [tweakedData, ...prevState]);
 		} else {
@@ -169,7 +169,6 @@ const PostCard = (props) => {
 		}
 	};
 
-	// console.log(userInfo.data);
 	const deleteCommentHandler = async (id) => {
 		setGetLogin((prevState) => !prevState);
 		await fetch(
@@ -194,8 +193,6 @@ const PostCard = (props) => {
 			setPostedComment(false);
 		}
 	}, [postedComment, reaction, props.post._id, getCommentsHandler]);
-
-	console.log(filteredComments);
 
 	let displayComment;
 	if (isCommentActive) {
@@ -278,7 +275,7 @@ const PostCard = (props) => {
 											</div>
 										</div>
 										<div>
-											{comment.authorId._id === userInfo.data._id && (
+											{comment.authorId._id === userInfo._id && (
 												<button
 													type='button'
 													className='btn-close'
