@@ -1,0 +1,364 @@
+   .adminHeaderWrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .adminSideContainer {
+      position: fixed;
+      top: 3px;
+      left: 4px;
+      bottom: 0;
+      width: auto;
+      z-index: 50;
+      border-radius: 8px;
+      background: rgb(255, 255, 255);
+    }
+    
+    .adminTopContainer {
+      position: fixed;
+      top: 0px;
+      width: 82%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 3px;
+      background: rgb(255, 255, 255);
+      border-radius: 8px;
+      z-index: 50;
+    }
+    
+    .topNavContent {
+      width: 82%;
+      margin-left:17.7% ;
+    }
+    
+    .content {
+      border-radius: 8px;
+      margin-top: 5.7rem;
+      margin-left: 17.7%;
+    }
+    
+    .width--17 {
+      width: 17%;
+    }
+    
+    .sideLinks {
+      height: 70vh;
+    }
+    
+    .sideLinks li a {
+      text-decoration: none;
+      color: black;
+      display: block;
+      padding: 10px;
+      transition: all ease-in-out 0.3s;
+    }
+    
+    .sideLinks li a:hover {
+      background-color: #b92b27;
+      color: white;
+      border-radius: 8px;
+    }
+    
+    .sideLinks li a span {
+      font-size: 22px;
+    }
+    
+    input {
+      outline: none;
+      border: 1px solid;
+    }
+    
+    input::placeholder {
+      padding-left: 8px;
+    }
+    
+    .adminHeaderIcons {
+      font-size: 25px;
+    }
+    
+    .xsmall-font {
+      font-size: 8px;
+    }
+    
+    .UserPng {
+      width: 100%;
+      flex-basis: 15%;
+    }
+    
+    .UserPng figure {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .UserPng figure img {
+      width: 100%;
+      height: 50px;
+    }
+    
+    .tableBg {
+      border-radius: 8px;
+      margin-left: 6px;
+    }
+    
+    /* User Display List */
+    h1 {
+      text-align: center;
+      padding: 10px 0;
+      font-weight: 500;
+      font-size: 30px;
+    }
+    /* specifically used for the dashboard user table */
+    .user-container {
+      padding: 0;
+      width: 97%;
+      margin: 0;
+      overflow-y: auto;
+      height: 81vh;
+      height: 81vh;
+    }
+    .user-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    .user-container::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.812);
+      border-radius: 6px;
+    }
+    .user-list {
+      list-style-type: none;
+      box-shadow: 2px 3px 10px lightgray;
+      border-radius: 6px;
+      margin: 15px 0;
+      padding: 8px;
+      background: rgb(255, 255, 255);
+      flex-basis: 33%;
+    }
+    .user-list:hover img,
+    .user-list:hover .user-container--info-container {
+      transform: scale(1.07);
+      transition: transform 0.3s;
+    }
+    .user-list a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: black;
+      gap: 3%;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    
+    .user-list img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+    .user-container--info-container {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    .user-info--name {
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+    .user-info--profile {
+      color: black;
+      font-size: 14px;
+      text-decoration: underline;
+      font-style: oblique;
+    }
+    
+    .rightSideContainer {
+      flex-basis: 53%;
+      margin: 0 auto;
+      height: 87.8vh;
+    }
+    .displayCardContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-flow: row wrap;
+      height: 50%;
+      margin-bottom: 1rem;
+    }
+    .displayCard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 8px;
+      height: 50%;
+      margin-bottom: 10px;
+      color: white;
+      flex-basis: 49%;
+      background-color: #b92c27ac;
+    }
+    .doubleDisplayCard {
+      margin: 0rem;
+      overflow-y: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .doubleDisplayCard figure {
+      flex-basis: 35%;
+      height: 100%;
+    }
+    .doubleDisplayCard figure img {
+      margin-top: 0.5rem;
+      width: 100%;
+      min-height: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .doubleDisplayCard .p-container {
+      height: 100%;
+      flex-basis: 70%;
+      border-radius: 8px;
+      padding: 10px 5px;
+      margin: 0rem 0.3rem;
+    }
+    .doubleDisplayCard .p-container p {
+      line-height: 1.5;
+    }
+    .doubleDisplayCard::-webkit-scrollbar {
+      width: 8px;
+    }
+    .doubleDisplayCard::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.812);
+      border-radius: 6px;
+    }
+    
+    /*specifically used for the user card  */
+    .cardUserWrapper {
+      min-height: 100vh;
+    }
+    .userCard--container {
+      padding: 0;
+      width: 97%;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 0.5%;
+      align-items: center;
+    }
+    .usercard {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: black;
+      gap: 3%;
+      font-size: 14px;
+      text-decoration: none;
+      list-style-type: none;
+    }
+    .formBtn {
+      margin: 20px 5px;
+      padding: 12px 15px;
+      color: black;
+      border: none;
+      font-weight: 600;
+    }
+    
+    .height-89vh{
+        min-height:89vh
+    }
+    .width--96{
+        width: 99%;
+    }
+    
+    /*user Modal style */
+    
+    .modal-editUser--wrapper h3 {
+      margin: 2rem auto;
+    }
+    .modal-editUser--wrapper legend {
+      font-size: 1.8rem;
+      width: 95%;
+      margin: 10px auto;
+    }
+    .modal-editUser--wrapper form {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .modal-editUser--wrapper form div {
+      margin-top: 0.7rem;
+    }
+    .modal-editUser--wrapper form input , .modal-editUser--wrapper form select{
+      display: block;
+      padding: 10px;
+      font-size: 15px;
+      width: 100%;
+      border: 1px solid #999797;
+      outline: none;
+    }
+    .modal-editUser--wrapper form input::placeholder {
+      padding: 5px 0;
+    }
+    .modal-editUser--wrapper form input::-webkit-inner-spin-button,
+    .modal-editUser--wrapper form input::-webkit-outter-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    #pwd {
+      border: none;
+      border-left: 5px solid #ea122a;
+      background-color: #f7e1e3;
+      margin-bottom: 1rem;
+    }
+    #pwd:focus {
+      border: 1px solid #999797;
+      background-color: #edf6ff;
+    }
+    .position_fixed {
+      padding: 10px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(320px, 100%, 48%);
+      height: 55vh;
+      z-index: 300;
+      background-color: white;
+    }
+    
+    /* post card */
+    .postCard--container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2%;
+    }
+    .post-list {
+      background: rgb(255, 255, 255);
+      padding-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 2px 3px 10px lightgray;
+      overflow: hidden;
+    }
+    .post-list > *:not(img:first-child) {
+      margin-inline: 1rem;
+    }
+    .post-list > *:not(:first-child) {
+        margin-block-start: 1rem;
+    }
+    .post-list img {
+      height: 300px;
+      object-fit: cover;
+    }
+    .text--ellipsis {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 8vh;
+    }
+    
+    /* Create user */
+    .create-User-Container{
+        width: 50%;
+        margin: 5rem auto 0 auto;
+    }

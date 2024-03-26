@@ -1,0 +1,677 @@
+.overall-admin--wrapper {
+  position: relative;
+  background: rgba(207, 207, 207, 0.45);
+  height: 100vh;
+  height: 100dvh;
+}
+
+.adminHeaderWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.leftNav {
+  height: 100vh;
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  position: fixed;
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  transform: translateX(-400px);
+  z-index: 500;
+  transition: 0.3s all ease-in-out;
+}
+.reveal {
+  transform: translateX(0);
+  transition: 0.3s all ease-in-out;
+}
+.topNavContent {
+  flex-basis: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100%;
+  background: rgba(207, 207, 207, 0.45);
+}
+
+.adminSideContainer {
+  width: 280px;
+}
+
+.adminTopContainer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  margin-top: 3px;
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  z-index: 300;
+}
+.navSearch-container {
+  order: 2;
+}
+
+.notifications {
+  order: 1;
+  flex-basis: 100%;
+  justify-content: space-between;
+}
+
+.hamburger,
+.close {
+  font-size: 30px;
+}
+
+.content {
+  border-radius: 8px;
+  width: 100%;
+  margin: 8.2rem auto;
+}
+
+.text--deco-none {
+  text-decoration: none;
+}
+.sideLinks {
+  height: 70vh;
+}
+
+.sideLinks li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 15px 0 15px 15px;
+  transition: all ease-in-out 0.3s;
+}
+
+.sideLinks li a:hover,
+.sideLinks li .active-sideLink {
+  background-color: #b92b27;
+  color: white;
+  border-radius: 8px;
+}
+
+.sideLinks li a span {
+  font-size: 22px;
+}
+
+input {
+  outline: none;
+  border: 1px solid;
+}
+
+.UserPng {
+  flex-basis: 14%;
+}
+
+.UserPng figure img {
+  width: 100%;
+  height: 50px;
+}
+
+/* handling the display flex */
+.dashboard-content-Wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.tableBg {
+  border-radius: 8px;
+  flex-basis: 100%;
+  margin-bottom: 0.5rem;
+  max-height: 800px;
+  order: 2;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: 30px;
+  color: #b92b27;
+}
+
+/* specifically used for the dashboard user table */
+.user-container {
+  padding: 0;
+  width: 99%;
+  max-height: 700px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.user-container::-webkit-scrollbar {
+  width: 8px;
+}
+.user-container::-webkit-scrollbar-thumb {
+  background: rgba(206, 206, 206, 0.812);
+  border-radius: 6px;
+}
+.user-list {
+  list-style-type: none;
+  box-shadow: 2px 3px 10px lightgray;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 8px 0;
+  background: rgb(255, 255, 255);
+  flex-basis: 100%;
+}
+.user-list:hover img,
+.user-list:hover .user-container--info-container {
+  transform: scale(1.07);
+  transition: transform 0.3s;
+}
+.user-list a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: black;
+  gap: 3%;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.user-list img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.user-container--info-container {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.user-info--name {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+.user-info--profile {
+  color: black;
+  font-size: 14px;
+  text-decoration: underline;
+  font-style: oblique;
+}
+
+.rightSideContainer {
+  flex-basis: 100%;
+  margin: 0 auto;
+  height: 80vh;
+  order: 1;
+}
+
+.displayCardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  height: 300px;
+  margin-bottom: 0.5rem;
+}
+.displayCard {
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 8px;
+  height: 49%;
+  margin-bottom: 5px;
+  color: white;
+  flex-basis: 49%;
+  background-color: #b92c27ac;
+}
+.doubleDisplayCard {
+  margin: 0rem;
+  /* overflow-y: hidden; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45%;
+}
+.doubleDisplayCard figure {
+  flex-basis: 35%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  /* margin-top: 0.4rem; */
+}
+.doubleDisplayCard figure img {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.doubleDisplayCard .p-container {
+  height: 100%;
+  flex-basis: 70%;
+  border-radius: 8px;
+}
+.doubleDisplayCard .p-container p {
+  line-height: 1.5;
+}
+.doubleDisplayCard::-webkit-scrollbar {
+  width: 8px;
+}
+.doubleDisplayCard::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.812);
+  border-radius: 6px;
+}
+
+/*specifically used for the user card  */
+.cardUserWrapper {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.userCard--container {
+  padding: 0;
+  width: 97%;
+  display: block;
+  overflow-y: hidden;
+}
+.usercard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  color: black;
+  gap: 3%;
+  font-size: 14px;
+  text-decoration: none;
+  list-style-type: none;
+}
+.userInfo-userPage {
+  display: flex;
+  flex-flow: column;
+  flex-basis: 90%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.mobile-user-btn {
+  flex-basis: 95%;
+  justify-content: center;
+}
+.formBtn {
+  margin: 20px 5px;
+  padding: 12px 15px;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+}
+.formBtn:nth-child(2) {
+  color: black;
+}
+
+/* create user model container W & H*/
+.height-89vh {
+  min-height: 89vh;
+}
+
+.modal-editUser--wrapper h3 {
+  margin: 0.5rem auto;
+}
+.modal-editUser--wrapper legend {
+  font-size: 1.8rem;
+  width: 95%;
+  margin: 10px auto;
+}
+.modal-editUser--wrapper form {
+  width: 80%;
+  margin: 0 auto;
+}
+.modal-editUser--wrapper form div {
+  margin-top: 0.7rem;
+}
+.modal-editUser--wrapper form input,
+.modal-editUser--wrapper form select {
+  display: block;
+  padding: 10px;
+  font-size: 15px;
+  width: 100%;
+  border: 1px solid #999797;
+  outline: none;
+}
+.modal-editUser--wrapper form input::placeholder {
+  padding: 5px 0;
+}
+.modal-editUser--wrapper form input::-webkit-inner-spin-button,
+.modal-editUser--wrapper form input::-webkit-outter-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.position_fixed {
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(380px, 100%, 70%);
+  height: max-content;
+  z-index: 500;
+  overflow-y: auto;
+  background-color: white;
+}
+
+#pwd {
+  border: none;
+  border-left: 5px solid #ea122a;
+  background-color: #f7e1e3;
+  margin-bottom: 1rem;
+}
+#pwd:focus {
+  border: 1px solid #999797;
+  background-color: #edf6ff;
+}
+
+/* post card */
+.postCard--container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0;
+  gap: 0%;
+  min-height: 100vh;
+}
+.post-list {
+  background: rgb(255, 255, 255);
+  padding-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 2px 3px 10px lightgray;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.post-list > *:not(img:first-child) {
+  margin-inline: 1rem;
+}
+.post-list > *:not(:first-child) {
+  margin-block-start: 1rem;
+}
+.post-list img {
+  height: 300px;
+  object-fit: cover;
+}
+.text--ellipsis, .space-text--ellipsis{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 8vh;
+}
+/*Note: Space page styling */
+.space-text--ellipsis{
+  -webkit-line-clamp: 4;
+}
+
+/* Create user */
+.create-User-Container {
+  width: 50%;
+  margin: 1.5rem auto 0 auto;
+}
+
+.admin-post-modal {
+  width: clamp(280px, 100%, 90%);
+  height: auto;
+}
+
+.max-height-overflow-auto {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* profile page */
+.proflie--container {
+  min-height: 89vh;
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-flex {
+  display: block;
+}
+.profile--img-container figure {
+  width: 100%;
+  height: 600px;
+}
+.profile--img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 100% 50%;
+  border-radius: 8px;
+}
+
+.profile-list-container ul {
+  list-style-type: none;
+}
+
+.profile-list-container li {
+  margin: 10px 0;
+}
+
+@media (min-width: 992px) {
+  .adminHeaderWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .leftNav {
+    position: initial;
+    flex-basis: 20%;
+    transform: translateX(0);
+  }
+  .adminSideContainer {
+    width: auto;
+  }
+  .topNavContent {
+    flex-basis: 80%;
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  .adminTopContainer {
+    position: sticky;
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row;
+  }
+
+  .adminHeaderIcons {
+    font-size: 25px;
+  }
+
+  .hamburger-container,
+  .close {
+    display: none;
+  }
+  .navSearch-container {
+    order: 1;
+  }
+
+  .notifications {
+    order: 2;
+    flex-basis: 37%;
+    justify-content: flex-end;
+  }
+
+  .xsmall-font {
+    font-size: 8px;
+  }
+
+  .UserPng {
+    width: 100%;
+    flex-basis: 11%;
+  }
+
+  .dashboard-content-Wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    width: 98%;
+    gap: 1.5%;
+    margin: 0 auto;
+    height: max-content;
+  }
+
+  .tableBg {
+    flex-basis: 45%;
+    max-height: 89vh;
+    order: 1;
+    margin: 0rem;
+  }
+  .content {
+    margin: 0.7rem auto;
+  }
+
+  /* specifically used for the dashboard user table */
+  .user-container {
+    width: 97%;
+    max-height: 80vh;
+  }
+
+  .user-list {
+    width: 100%;
+    flex-basis: 13%;
+  }
+  
+
+  .rightSideContainer {
+    flex-basis: 45%;
+    display: flex;
+    flex-flow: column nowrap;
+    order: 2;
+    width: 100%;
+    height: 89vh;
+  }
+  .displayCardContainer {
+    min-height: 50%;
+  }
+
+  /*specifically used for the user card  */
+  .userCard--container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    margin: 0 auto;
+    gap: 1%;
+    width: 99%;
+  }
+
+  .usercard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row;
+    color: black;
+    padding: 0 4px;
+    gap: 3%;
+  }
+  .userInfo-userPage {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-basis: 10%;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .mobile-user-btn {
+    flex-basis: 20%;
+  }
+
+  .formBtn {
+    margin: 10px 5px;
+    padding: 12px;
+  }
+
+  /* create user model container W & H*/
+  .height-89vh {
+    min-height: 89vh;
+  }
+
+  /*user Modal style */
+
+  .modal-editUser--wrapper h3 {
+    margin: 2rem auto;
+  }
+
+  .modal-editUser--wrapper form {
+    width: 50%;
+  }
+
+  .modal-profile--editUser--wrapper form{
+    width: 80%;
+  }
+
+  .position_fixed {
+    border-radius: 8px;
+    padding: 0 0 2rem 0;
+    left: 60%;
+    width: clamp(380px, 100%, 48%);
+    overflow-y: hidden;
+  }
+
+  .left{
+    left: 50%;
+  }
+
+  .profileModalWidth{
+    width: clamp(380px, 100%, 40%);
+  }
+
+  /* post card */
+  .postCard--container {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    width: 98%;
+    margin: 0 auto;
+    gap: 2%;
+  }
+  .post-list {
+    height: 550px;
+  }
+  /* .post-list > *:not(img:first-child) {
+    margin-inline: 1rem;
+  }
+  .post-list > *:not(:first-child) {
+    margin-block-start: 1rem;
+  }
+  .post-list img {
+    height: 300px;
+    object-fit: cover;
+  } */
+  /* Create user */
+  .create-User-Container-wrapper {
+    width: 70%;
+    background-color: #b92b27;
+  }
+  .create-User-Container {
+    width: 60%;
+    margin: 4rem auto;
+  }
+
+  .admin-post-modal {
+    width: clamp(280px, 100%, 98%);
+  }
+
+  /* profile page */
+  .profile-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile--img-container {
+    flex-basis: 35%;
+  }
+  .profile--img-container figure {
+    height: 500px;
+  }
+
+  .profile--img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100% 60%;
+    border-radius: 8px;
+  }
+  .profile-list-container {
+    flex-basis: 35%;
+    min-height: 100%;
+  }
+}
