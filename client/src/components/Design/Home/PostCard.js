@@ -50,6 +50,7 @@ const PostCard = (props) => {
 	const [selected, setSelected] = useState('');
 	const [like, setLike] = useState(props.post.like || 0);
 	const [unlike, setUnlike] = useState(props.post.dislike || 0);
+	const [loading, setLoading] = useState(false);
 
 	const postReaction = (input, id) => {
 		fetch(process.env.REACT_APP_API_URL + `/api/v1/post/${id}/reaction`, {
@@ -109,6 +110,7 @@ const PostCard = (props) => {
 	};
 
 	const commentRevealHandler = async () => {
+		setLoading(true);
 		setLoader(true);
 		const response = await fetch(
 			process.env.REACT_APP_API_URL + `/api/v1/post/${props.post._id}/comments`
@@ -120,7 +122,8 @@ const PostCard = (props) => {
 		setIsCommentActive((prevState) => !prevState);
 		setGetLogin((prevState) => !prevState);
 		setLoader(false);
-		setFilteredComments(data);
+		setFilteredComments(data.data);
+		setLoading(false);
 	};
 
 	const getCommentsHandler = useCallback(async () => {
@@ -131,7 +134,7 @@ const PostCard = (props) => {
 			throw new Error('Something went wrong!');
 		}
 		const data = await response.json();
-		setFilteredComments(data);
+		setFilteredComments(data.data);
 		setGetLogin((prevState) => !prevState);
 	}, [props.post._id, setFilteredComments, setGetLogin]);
 
@@ -156,11 +159,17 @@ const PostCard = (props) => {
 			setCommentValue('');
 			setPostedComment(true);
 			setGetLogin((prevState) => !prevState);
+			const tweakedData = {
+				...data.data,
+				authorId: userInfo.data,
+			};
+			setFilteredComments((prevState) => [tweakedData, ...prevState]);
 		} else {
 			return;
 		}
 	};
 
+	// console.log(userInfo.data);
 	const deleteCommentHandler = async (id) => {
 		setGetLogin((prevState) => !prevState);
 		await fetch(
@@ -185,6 +194,8 @@ const PostCard = (props) => {
 			setPostedComment(false);
 		}
 	}, [postedComment, reaction, props.post._id, getCommentsHandler]);
+
+	console.log(filteredComments);
 
 	let displayComment;
 	if (isCommentActive) {
@@ -232,13 +243,13 @@ const PostCard = (props) => {
 						</div>
 					)}
 
-					{filteredComments.length < 1 ? (
+					{filteredComments.length === 0 && !loading ? (
 						<p className='text-center fw-bold fs-xl-5'>No comment found!</p>
 					) : (
-						filteredComments.map((comment, index) => {
+						filteredComments?.map((comment, index) => {
 							return (
 								<Card
-									className='p-2 p-lg-3 mb-2 border-0 rounded-0 border-bottom'
+									className='p-2 p-lg-3 mb-0 border-0 rounded-0 border-bottom'
 									key={comment.authorId + index + 'C'}
 								>
 									<div className='d-flex justify-content-between'>
@@ -267,7 +278,7 @@ const PostCard = (props) => {
 											</div>
 										</div>
 										<div>
-											{comment.authorId._id === userInfo._id && (
+											{comment.authorId._id === userInfo.data._id && (
 												<button
 													type='button'
 													className='btn-close'
@@ -281,12 +292,12 @@ const PostCard = (props) => {
 									{/* this will be the body of the blog post and link */}
 									<div>
 										<article className='clearfix'>
-											<p className=''>{comment.content}</p>
+											<p className='p-0 m-0'>{comment.content}</p>
 										</article>
 									</div>
 
 									{/* where the like, unlike & comment */}
-									<div className='d-flex justify-content-between align-items-center mt-1'>
+									<div className='d-flex justify-content-between align-items-center mt-0'>
 										<div className=' d-flex justify-content-start  align-items-center'></div>
 
 										<div className='cursor-pointer'>
@@ -402,7 +413,9 @@ const PostCard = (props) => {
 			<div>{displayComment}</div>
 			{loader === true && (
 				<div className='like--bg mt-2 p-2'>
-					{filteredComments.length} comments
+					{filteredComments.length
+						? `${filteredComments.length} comments`
+						: `Loading comments...`}
 				</div>
 			)}
 		</Card>

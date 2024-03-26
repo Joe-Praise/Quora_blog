@@ -21,7 +21,8 @@ exports.createComment = async (req, res) => {
     };
     const data = new commentModel(payload);
     await data.save();
-    return res.json({ success: true, message: 'Comment created!' });
+    console.log(data);
+    return res.json({ success: true, message: 'Comment created!', data });
   } catch (err) {
     return res.status(500).json({ error: true, message: err.message });
   }
